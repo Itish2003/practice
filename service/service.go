@@ -46,6 +46,10 @@ func GetAllTask(c *gin.Context) {
 	c.JSON(200, gin.H{"Tasks": task})
 }
 
+func Redirectv1(c *gin.Context) {
+	c.Redirect(http.StatusSeeOther, "/v1/")
+}
+
 func GetTaskByName(c *gin.Context) {
 	name := c.Param("name")
 	if name == "" {

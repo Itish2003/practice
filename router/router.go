@@ -21,6 +21,8 @@ func NewRouter() (*gin.Engine, error) {
 	defer file.Close()
 	gin.DefaultWriter = io.MultiWriter(file)
 
+	r.GET("/", service.Redirectv1)
+
 	route := r.Group("v1")
 	{
 		route.GET("/", service.Home)
