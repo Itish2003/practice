@@ -1,0 +1,7 @@
+[GIN-debug] GET    /v1/                      --> obsidian/practice/service.Home (2 handlers)
+[GIN-debug] POST   /v1/addTask               --> obsidian/practice/service.AddTask (2 handlers)
+[GIN-debug] GET    /v1/getTask               --> obsidian/practice/service.GetAllTask (2 handlers)
+[GIN-debug] GET    /v1/getTask/:name         --> obsidian/practice/service.GetTaskByName (2 handlers)
+[GIN-debug] PATCH  /v1/updateTask/:name      --> obsidian/practice/router.NewRouter.func1 (2 handlers)
+[GIN-debug] POST   /v1/deleteTask/:name      --> obsidian/practice/service.DeleteTaskByName (2 handlers)
+[GIN-debug] POST   /v1/deleteTask            --> obsidian/practice/service.DeleteAllTask (2 handlers)

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskList</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 8px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    Hello this is the home page!
+
+    <form action="/v1/addTask" method="POST">
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <a href="/v1/getTask">Get Task List</a>
+    <form action="/v1/deleteTask" method="POST">
+        <button type="submit">Delete Tasks</button>
+    </form>
+    <ul>
+        {{range .Tasks}}
+        <li>{{.}}
+            <form action="/v1/deleteTask/{{.}}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>
