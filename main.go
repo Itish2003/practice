@@ -10,7 +10,7 @@ func main() {
 	// Get the port from the environment variable
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000" // Default to 8000 for local development
+		port = "8080" // Default to 8000 for local development
 	}
 
 	r, err := router.NewRouter()
